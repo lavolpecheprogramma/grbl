@@ -102,12 +102,12 @@
 // on separate pin, but homed in one cycle. Also, it should be noted that the function of hard limits
 // will not be affected by pin sharing.
 // NOTE: Defaults are set for a traditional 3-axis CNC machine. Z-axis first to clear, followed by X & Y.
-#define HOMING_CYCLE_0 (1<<Z_AXIS)                // REQUIRED: First move Z to clear workspace.
-#define HOMING_CYCLE_1 ((1<<X_AXIS)|(1<<Y_AXIS))  // OPTIONAL: Then move X,Y at the same time.
+// #define HOMING_CYCLE_0 (1<<Z_AXIS)                // REQUIRED: First move Z to clear workspace.
+// #define HOMING_CYCLE_1 ((1<<X_AXIS)|(1<<Y_AXIS))  // OPTIONAL: Then move X,Y at the same time.
 // #define HOMING_CYCLE_2                         // OPTIONAL: Uncomment and add axes mask to enable
 
 // NOTE: The following are two examples to setup homing for 2-axis machines.
-// #define HOMING_CYCLE_0 ((1<<X_AXIS)|(1<<Y_AXIS))  // NOT COMPATIBLE WITH COREXY: Homes both X-Y in one cycle. 
+#define HOMING_CYCLE_0 ((1<<X_AXIS)|(1<<Y_AXIS))  // NOT COMPATIBLE WITH COREXY: Homes both X-Y in one cycle. 
 
 // #define HOMING_CYCLE_0 (1<<X_AXIS)  // COREXY COMPATIBLE: First home X
 // #define HOMING_CYCLE_1 (1<<Y_AXIS)  // COREXY COMPATIBLE: Then home Y
@@ -369,7 +369,7 @@
 
 // If you use a servo instead of a spindle (like on EggBot or pen plotter), you need to uncomment this option. 
 // This will set the PWM frequency to 61Hz and limit the PWM range to 0.5 - 2.5ms, as used by most servos.
-// #define SPINDLE_IS_SERVO // Default disabled. Uncomment to enable.
+#define SPINDLE_IS_SERVO // Default disabled. Uncomment to enable.
 
 #define SERVO_SHORT      7      // set min pulse duration to (7 = 0.5ms, 15 = 1.03ms, 20=1.40ms)
 #define SERVO_LONG       38      // set max pulse duration (38 = 2.49ms, 31 = 2.05ms)
